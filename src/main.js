@@ -44,3 +44,18 @@ const card = (id) => `
 </div>
 </article>
 `;
+
+
+const bindHearts = () => {
+    view.querySelectorAll('.card .fav').forEach(btn => {
+        btn.onclick = () => {
+            const id = btn.closest('.card').dataset.id;
+            toggleFav(id);
+            btn.classList.toggle('active');
+            if (location.hash.startsWith('#/favorites') && !isFav(id)) {
+                btn.closest('.card').remove();
+                if (!view.querySelector('.card')) empty('No favorites yet. Go add some on Browse!');
+            }
+        };
+    });
+};
