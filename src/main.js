@@ -87,3 +87,11 @@ async function renderBrowse() {
         prevBtn.disabled = nextBtn.disabled = true;
     }
 }
+
+function renderFavorites() {
+    controls.hidden = true;
+    const favs = getFavs();
+    if (favs.length === 0) return empty('No favorites yet. Browse cats and tap ❤ to add.');
+    show(`<section class="grid">${favs.map(id => card(id)).join('')}</section>`);
+    bindHearts();
+}
