@@ -95,3 +95,11 @@ function renderFavorites() {
     show(`<section class="grid">${favs.map(id => card(id)).join('')}</section>`);
     bindHearts();
 }
+
+
+function route() {
+    const h = location.hash || '#/';
+    navHome.classList.toggle('active', !h.startsWith('#/favorites'));
+    navFav.classList.toggle('active', h.startsWith('#/favorites'));
+    h.startsWith('#/favorites') ? renderFavorites() : renderBrowse();
+}
