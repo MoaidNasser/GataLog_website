@@ -35,3 +35,31 @@ a {
   color: inherit;
   text-decoration: none
 }
+
+.app {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: rgba(11, 12, 16, .7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: 20px;
+  padding: 10px 12px;
+  box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  height: 80px;
+}
