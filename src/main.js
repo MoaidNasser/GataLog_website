@@ -103,3 +103,19 @@ function route() {
     navFav.classList.toggle('active', h.startsWith('#/favorites'));
     h.startsWith('#/favorites') ? renderFavorites() : renderBrowse();
 }
+
+window.addEventListener('hashchange', route);
+navHome.onclick = () => (location.hash = '#/');
+navFav.onclick = () => (location.hash = '#/favorites');
+prevBtn.onclick = () => {
+    if (page > 1) {
+        page--;
+        route();
+    }
+};
+nextBtn.onclick = () => {
+    page++;
+    route();
+};
+
+route();
