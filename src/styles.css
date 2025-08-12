@@ -128,3 +128,18 @@ nav {
   align-items: center;
   margin: 4px 0 12px
 }
+
+
+.pill {
+  border: 1px solid rgba(255, 255, 255, .1);
+  color: var(--muted);
+  background: #12131a;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-size: 14px
+}
+
+
+.spacer {
+  flex: 1
+}
