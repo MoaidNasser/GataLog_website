@@ -143,3 +143,37 @@ nav {
 .spacer {
   flex: 1
 }
+
+
+.grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: auto auto auto auto auto;
+}
+
+
+.card {
+  background: var(--card);
+  border: 1px solid rgba(255, 255, 255, .06);
+  border-radius: var(--radius);
+  overflow: hidden;
+  position: relative;
+  box-shadow: var(--shadow);
+}
+
+
+.thumb {
+  width: 100%;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  display: block;
+  background: #0a0b0f
+}
+
+
+.card .bar {
+  position: absolute;
+  inset: auto 8px 8px auto;
+  display: flex;
+  gap: 6px
+}
