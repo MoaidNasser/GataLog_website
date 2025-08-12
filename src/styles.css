@@ -151,7 +151,7 @@ nav {
 .grid {
   display: grid;
   gap: 12px;
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 }
 
 
@@ -164,6 +164,10 @@ nav {
   box-shadow: var(--shadow);
 }
 
+.card:hover {
+  transform: translateY(-3px);
+  transition: transform .2s ease;
+}
 
 .thumb {
   width: 100%;
