@@ -119,3 +119,12 @@ nav {
 .nav-btn:hover {
   transform: translateY(-1px)
 }
+
+
+.controls {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin: 4px 0 12px
+}
