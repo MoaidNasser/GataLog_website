@@ -59,3 +59,31 @@ const bindHearts = () => {
         };
     });
 };
+
+
+async function renderBrowse() {
+    controls.hidden = false;
+    pageNo.textContent = String(page);
+    loading('Fetching cats...');
+
+
+    const skip = (page - 1) * LIMIT;
+    try {
+        const res = await fetch(listURL(skip, LIMIT));
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        const cats = await res.json();
+        if (!Array.isArray(cats) || cats.length === 0) {
+            empty('No cats found. Try a different page.');
+            prevBtn.disabled = page <= 1;
+            nextBtn.disabled = true;
+            return;
+        }
+        show(`<section class="grid">${cats.map(c => card(c.id)).join('')}</section>`);
+        bindHearts();
+        prevBtn.disabled = page <= 1;
+        nextBtn.disabled = cats.length < LIMIT;
+    } catch (e) {
+        errorBox(e.message, renderBrowse);
+        prevBtn.disabled = nextBtn.disabled = true;
+    }
+}
