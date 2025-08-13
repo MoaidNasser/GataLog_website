@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1" name="viewport"/>
+  <title>CataLog – Cats Browser with Favorites</title>
+  <link href="./styles.css" rel="stylesheet"/>
+  <script src="./main.js"></script>
+</head>
+
+<body>
+<div class="app">
+
+  <header>
+    <div aria-label="CataLog home" class="brand">
+      <div aria-hidden="true" class="logo">🐾</div>
+      <div class="title"><a href="#/">CataLog</a></div>
+    </div>
+    <nav>
+      <button class="nav-btn" data-route="#/" id="nav-home">Browse</button>
+      <button class="nav-btn" data-route="#/favorites" id="nav-fav">Favorites</button>
+    </nav>
+  </header>
+
+  <div class="controls" hidden id="controls">
+    <span class="pill" id="status-pill">Page <strong id="pageNo">1</strong></span>
+    <span class="pill" hidden id="count-pill"></span>
+    <div class="spacer"></div>
+    <div class="row pager">
+      <button aria-label="Previous page" class="btn" id="prevBtn">⟵ Prev</button>
+      <button aria-label="Next page" class="btn" id="nextBtn">Next ⟶</button>
+    </div>
+  </div>
+
+  <main id="view"></main>
+
+  <footer>
+    Moaid Karakra
+  </footer>
+</div>
+
+</body>
+</html>
+
